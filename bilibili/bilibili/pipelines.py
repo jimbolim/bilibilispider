@@ -11,33 +11,9 @@ from scrapy.utils.project import get_project_settings
 
 
 class BilibiliPipeline(object):
-    def __init__(self):
-        self.fp = open('bilibili.json', 'w', encoding='utf-8')
-
-
     def process_item(self, item, spider):
-        item_json = json.dumps(item, ensure_ascii=False)
-        self.fp.write(item_json+'\n')
         return item
 
-
-    def spoder_close(self,spider):
-        self.fp.close()
-        print('finish==========================')
-
-class ForproxyPipeline(object):
-    def __init__(self):
-        self.fp = open('proxys.txt', 'w', encoding='utf-8')
-
-
-    def process_item(self, item, spider):
-        self.fp.write(item['success']+'\n')
-        return item
-
-
-    def spoder_close(self,spider):
-        self.fp.close()
-        print('finish==========================')
 
 class DBPipeline(object):
     def __init__(self):

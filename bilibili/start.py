@@ -1,3 +1,3 @@
-from scrapy import cmdline
+from scrapy.cmdline import execute
 
-cmdline.execute(['scrapy', 'crawl', 'bili'])
+execute(["scrapy","crawl","bili"])
